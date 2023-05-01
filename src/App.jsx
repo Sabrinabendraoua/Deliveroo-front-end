@@ -35,7 +35,7 @@ function App() {
                     <p>{meals.description}</p>
                     <p>{meals.price}</p>
                   </div>
-                  <div>
+                  <div className="img-meals">
                     <img src={meals.picture} />
                   </div>
                 </div>

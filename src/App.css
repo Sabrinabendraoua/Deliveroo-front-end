@@ -21,7 +21,6 @@ main {
 section {
   display: flex;
   flex-wrap: wrap;
-  margin: 30px;
 }
 .categories {
   display: flex;
@@ -34,5 +33,12 @@ section {
   padding: 10px;
 }
 .meal {
+  border: solid green 2px;
+  justify-content: space-between;
+}
+.img-meals {
+  display: flex;
   border: solid red 2px;
+  justify-content: space-between;
+  margin-left: 10px;
 }
