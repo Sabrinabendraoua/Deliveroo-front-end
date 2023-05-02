@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import Header from "./components/Header";
+import logo from "./assets/images/Deliveroo-Logo.png";
+
 //mon composant se monte et se render, je définis un state
 function App() {
   const [data, setData] = useState();
@@ -28,43 +29,67 @@ function App() {
   return isLoading ? (
     <p>Loading....</p>
   ) : (
-    //    <div>
-    //     <h1>{data.restaurant.name}</h1>
-    //    <p>{data.restaurant.description}</p>
-    //    <img src={data.restaurant.picture} alt="photo de tartine" />
-    //  </div>
-    <main>
-      {data.categories.map((typeOfMeal) => {
-        if (typeOfMeal.meals.length !== 0) {
-          return (
-            <div>
-              <h2 key={typeOfMeal.meals.id}>{typeOfMeal.name}</h2>
-              <section>
-                {typeOfMeal.meals.map((meals) => {
-                  // console.log(meals.title);
+    <>
+      <header>
+        <div className="container">
+          <img src={logo} alt="logo Deliveroo" />
+        </div>
+      </header>
+      <section className="hero">
+        <div className="container">
+          <div>
+            <h1>{data.restaurant.name}</h1>
+            <p>{data.restaurant.description}</p>
+          </div>
+          <img src={data.restaurant.picture} alt="photo de tartine" />
+        </div>
+      </section>
+      <main>
+        <div className="container">
+          <section className="col-left">
+            {data.categories.map((typeOfMeal) => {
+              if (typeOfMeal.meals.length !== 0) {
+                return (
+                  <div key={typeOfMeal.name}>
+                    <h2>{typeOfMeal.name}</h2>
+                    <div>
+                      {typeOfMeal.meals.map((meals) => {
+                        // console.log(meals.title);
 
-                  return (
-                    <div className="categories">
-                      <div className="meal">
-                        <h3>{meals.title}</h3>
-                        <p>{meals.description}</p>
-                        <p>{meals.price} €</p>
-                        {meals.popular && <p>Populaire</p>}
-                      </div>
-                      <div className="img-meals">
-                        <img src={meals.picture} alt={meals.title} />
-                      </div>
+                        return (
+                          <div className="categories">
+                            <div className="meal">
+                              <h3>{meals.title}</h3>
+                              <p className="meal-desrciption">
+                                {meals.description}
+                              </p>
+                              <div className="price-popular">
+                                <p>{meals.price} €</p>
+                                {meals.popular && (
+                                  <p className="popular">Populaire</p>
+                                )}
+                              </div>
+                            </div>
+                            <div className="img-meals">
+                              {meals.picture && (
+                                <img src={meals.picture} alt={meals.title} />
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
-                  );
-                })}
-              </section>
-            </div>
-          );
-        } else {
-          return null;
-        }
-      })}
-    </main>
+                  </div>
+                );
+              } else {
+                return null;
+              }
+            })}
+          </section>
+          <section className="col-right"></section>
+        </div>
+      </main>
+    </>
   );
 }
 
