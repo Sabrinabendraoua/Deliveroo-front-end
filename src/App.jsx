@@ -104,7 +104,13 @@ function App() {
               <button className="button-basket">Valider mon panier</button>
             </div>
             {data.categories.map((addMealandPrice) => {
+              // console.log(addMealandPrice.meals);
               console.log(addMealandPrice.meals);
+              {
+                addMealandPrice.meals.map((basket) => {
+                  console.log(basket);
+                });
+              }
             })}
             <>
               <div className="add-meal">
@@ -127,6 +133,7 @@ function App() {
                     +
                   </button>
                 </div>
+
                 <div className="name-meal">
                   <p>Brunch authentique 1 personne</p>
                 </div>
