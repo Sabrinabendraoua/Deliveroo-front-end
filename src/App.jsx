@@ -57,7 +57,7 @@ function App() {
                         // console.log(meals.title);
 
                         return (
-                          <article>
+                          <article key={meals.id}>
                             <div>
                               <h3>{meals.title}</h3>
                               <p className="meal-desrciption">
