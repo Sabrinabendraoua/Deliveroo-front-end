@@ -12,8 +12,10 @@ img {
   height: 100px;
 }
 header {
-  height: 80px;
-  background-color: aqua;
+  border-bottom: solid lightgrey 1px;
+}
+header img {
+  height: 70px;
 }
 h2 {
   font-size: 2rem;
