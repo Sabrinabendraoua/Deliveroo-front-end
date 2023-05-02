@@ -8,8 +8,8 @@ function App() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [counter, setCounter] = useState(0);
-  const [addMealname, setAddMealname] = useState([0]);
-  const [addMealprice, setAddMealprice] = useState([0]);
+  const [addMeal, setAddMeal] = useState([0]);
+
   //on ne peut pas rendre un composant asynchrone, dc je crée une foonction fetchData, qui pourra être asynchrone
   useEffect(() => {
     const fetchData = async () => {
@@ -63,12 +63,9 @@ function App() {
                           <article
                             key={meals.id}
                             onClick={() => {
-                              const addMealnameCopy = [...addMealname];
-                              const addMealpriceCopy = [...addMealprice];
-                              addMealnameCopy.push(0);
-                              addMealpriceCopy.push(0);
-                              setAddMealname(addMealnameCopy);
-                              setAddMealprice(addMealpriceCopy);
+                              const addMealCopy = [...addMeal];
+                              addMealCopy.push(0);
+                              setAddMeal(addMealCopy.name);
                             }}
                           >
                             <div>
@@ -106,45 +103,50 @@ function App() {
             <div className="basket">
               <button className="button-basket">Valider mon panier</button>
             </div>
-            <div className="add-meal">
-              <div className="quantity">
-                <button
-                  onClick={() => {
-                    if (counter > 0) {
-                      setCounter(counter - 1);
-                    }
-                  }}
-                >
-                  -
-                </button>
-                <p>{counter}</p>
-                <button
-                  onClick={() => {
-                    setCounter(counter + 1);
-                  }}
-                >
-                  +
-                </button>
+            {data.categories.map((addMealandPrice) => {
+              console.log(addMealandPrice.meals);
+            })}
+            <>
+              <div className="add-meal">
+                <div className="quantity">
+                  <button
+                    onClick={() => {
+                      if (counter > 0) {
+                        setCounter(counter - 1);
+                      }
+                    }}
+                  >
+                    -
+                  </button>
+                  <p>{counter}</p>
+                  <button
+                    onClick={() => {
+                      setCounter(counter + 1);
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
+                <div className="name-meal">
+                  <p>Brunch authentique 1 personne</p>
+                </div>
+                <div className="price-meal">
+                  <p>25,00 €</p>
+                </div>
               </div>
-              <div className="name-meal">
-                <p>Brunch authentique 1 personne</p>
-              </div>
-              <div className="price-meal">
+              <div className="sub-total">
+                <p>Sous-total</p>
                 <p>25,00 €</p>
               </div>
-            </div>
-            <div className="sub-total">
-              <p>Sous-total</p>
-              <p>25,00 €</p>
-            </div>
-            <div className="delivered">
-              <p>Frais de livraison</p>
-              <p>2,50 €</p>
-            </div>
-            <div className="total">
-              <p>Total</p>
-              <p>27,50 €</p>
-            </div>
+              <div className="delivered">
+                <p>Frais de livraison</p>
+                <p>2,50 €</p>
+              </div>
+              <div className="total">
+                <p>Total</p>
+                <p>27,50 €</p>
+              </div>
+            </>
           </section>
         </div>
       </main>
