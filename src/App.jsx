@@ -95,9 +95,9 @@ function App() {
             </div>
             <div className="add-meal">
               <div className="quantity">
-                <button>-</button>
+                <button onClick={() => {}}>-</button>
                 <p>1</p>
-                <button>+</button>
+                <button onClick={() => {}}>+</button>
               </div>
               <div className="name-meal">
                 <p>Brunch authentique 1 personne</p>
