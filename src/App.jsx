@@ -91,7 +91,7 @@ function App() {
           </section>
           <section className="col-right">
             <div className="basket">
-              <button>Valider mon panier</button>
+              <button className="button-basket">Valider mon panier</button>
             </div>
             <div className="add-meal">
               <div className="quantity">
@@ -102,7 +102,7 @@ function App() {
               <div className="name-meal">
                 <p>Brunch authentique 1 personne</p>
               </div>
-              <div>
+              <div className="price-meal">
                 <p>25,00 €</p>
               </div>
             </div>
@@ -111,11 +111,12 @@ function App() {
               <p>25,00 €</p>
             </div>
             <div className="delivered">
-              <p>Sous-total</p>
-              <p>25,00 €</p>
+              <p>Frais de livraison</p>
+              <p>2,50 €</p>
             </div>
             <div className="total">
-              <p>25,00 €</p>
+              <p>Total</p>
+              <p>27,50 €</p>
             </div>
           </section>
         </div>

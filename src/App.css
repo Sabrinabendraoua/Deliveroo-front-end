@@ -72,10 +72,11 @@ main {
   background-color: blue;
 }
 .col-right {
-  height: 20px;
+  height: 350px;
   width: 20px;
   flex: 30;
-  background-color: red;
+  border-radius: 5px;
+  background-color: white;
 }
 .meals-container {
   display: flex;
@@ -91,7 +92,6 @@ main article {
   padding: 15px;
   box-sizing: border-box;
   display: flex;
-  /* background-color: green; */
 }
 main img {
   height: 130px;
@@ -120,4 +120,61 @@ main img {
 }
 i {
   margin-right: 5px;
+}
+
+/* COL-RIGHT */
+.basket {
+  text-align: center;
+  margin: 15px 0;
+}
+.button-basket {
+  height: 50px;
+  width: 90%;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: #00cdbd;
+  border: none;
+}
+.add-meal,
+.sub-total,
+.delivered,
+.total {
+  display: flex;
+  border-bottom: solid lightgrey 1px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+.quantity,
+.name-meal,
+.price-meal {
+  display: flex;
+  align-items: center;
+}
+.delivered {
+  height: 70px;
+}
+.col-right div:nth-child(2) button {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00cdbd;
+  border: solid 2px #00cdbd;
+  background-color: white;
+  font-weight: bold;
+  margin: 3px;
+  padding-right: 5px;
+}
+.total {
+  font-weight: bold;
+}
+.name-meal {
+  width: 210px;
 }
