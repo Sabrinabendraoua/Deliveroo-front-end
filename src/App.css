@@ -112,7 +112,10 @@ main img {
 }
 
 .popular {
-  color: rgb(255, 102, 0);
-  margin-left: 20px;
+  color: rgba(245, 111, 22, 0.845);
+  margin-left: 15px;
   font-weight: bold;
+}
+i {
+  margin-right: 5px;
 }

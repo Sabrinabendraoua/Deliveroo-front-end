@@ -66,7 +66,10 @@ function App() {
                               <div className="price-popular">
                                 <p>{meals.price} €</p>
                                 {meals.popular && (
-                                  <p className="popular">Populaire</p>
+                                  <p className="popular">
+                                    <i class="fa-solid fa-star"></i>
+                                    Populaire
+                                  </p>
                                 )}
                               </div>
                             </div>
