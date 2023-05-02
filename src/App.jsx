@@ -37,7 +37,7 @@ function App() {
       </header>
       <section className="hero">
         <div className="container">
-          <div>
+          <div className="restaurant-infos">
             <h1>{data.restaurant.name}</h1>
             <p>{data.restaurant.description}</p>
           </div>
