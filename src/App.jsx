@@ -7,6 +7,9 @@ import logo from "./assets/images/Deliveroo-Logo.png";
 function App() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [counter, setCounter] = useState(0);
+  const [addMealname, setAddMealname] = useState([0]);
+  const [addMealprice, setAddMealprice] = useState([0]);
   //on ne peut pas rendre un composant asynchrone, dc je crée une foonction fetchData, qui pourra être asynchrone
   useEffect(() => {
     const fetchData = async () => {
@@ -57,7 +60,17 @@ function App() {
                         // console.log(meals.title);
 
                         return (
-                          <article key={meals.id}>
+                          <article
+                            key={meals.id}
+                            onClick={() => {
+                              const addMealnameCopy = [...addMealname];
+                              const addMealpriceCopy = [...addMealprice];
+                              addMealnameCopy.push(0);
+                              addMealpriceCopy.push(0);
+                              setAddMealname(addMealnameCopy);
+                              setAddMealprice(addMealpriceCopy);
+                            }}
+                          >
                             <div>
                               <h3>{meals.title}</h3>
                               <p className="meal-desrciption">
@@ -95,9 +108,23 @@ function App() {
             </div>
             <div className="add-meal">
               <div className="quantity">
-                <button onClick={() => {}}>-</button>
-                <p>1</p>
-                <button onClick={() => {}}>+</button>
+                <button
+                  onClick={() => {
+                    if (counter > 0) {
+                      setCounter(counter - 1);
+                    }
+                  }}
+                >
+                  -
+                </button>
+                <p>{counter}</p>
+                <button
+                  onClick={() => {
+                    setCounter(counter + 1);
+                  }}
+                >
+                  +
+                </button>
               </div>
               <div className="name-meal">
                 <p>Brunch authentique 1 personne</p>
