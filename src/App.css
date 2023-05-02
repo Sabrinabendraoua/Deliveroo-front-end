@@ -69,11 +69,13 @@ main {
 }
 .col-left {
   flex: 70;
+  background-color: blue;
 }
-main .col-right {
+.col-right {
   height: 20px;
   width: 20px;
   flex: 30;
+  background-color: red;
 }
 .meals-container {
   display: flex;

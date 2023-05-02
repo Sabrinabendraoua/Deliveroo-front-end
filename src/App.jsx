@@ -89,7 +89,35 @@ function App() {
               }
             })}
           </section>
-          <section className="col-right"></section>
+          <section className="col-right">
+            <div className="basket">
+              <button>Valider mon panier</button>
+            </div>
+            <div className="add-meal">
+              <div className="quantity">
+                <button>-</button>
+                <p>1</p>
+                <button>+</button>
+              </div>
+              <div className="name-meal">
+                <p>Brunch authentique 1 personne</p>
+              </div>
+              <div>
+                <p>25,00 €</p>
+              </div>
+            </div>
+            <div className="sub-total">
+              <p>Sous-total</p>
+              <p>25,00 €</p>
+            </div>
+            <div className="delivered">
+              <p>Sous-total</p>
+              <p>25,00 €</p>
+            </div>
+            <div className="total">
+              <p>25,00 €</p>
+            </div>
+          </section>
         </div>
       </main>
     </>
