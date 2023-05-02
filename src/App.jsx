@@ -28,40 +28,43 @@ function App() {
   return isLoading ? (
     <p>Loading....</p>
   ) : (
-    // <Header />
-    //        <div>
-    //         <h1>{data.restaurant.name}</h1>
-    //         <p>{data.restaurant.description}</p>
-    //       </div>
-    data.categories.map((typeOfMeal) => {
-      console.log(data.restaurant);
-      return (
-        <>
-          <main>
-            <h2 key={typeOfMeal.meals.id}>{typeOfMeal.name}</h2>
-            <section>
-              {typeOfMeal.meals.map((meals) => {
-                // console.log(meals.title);
-                if ({ typeOfMeal }) {
+    //    <div>
+    //     <h1>{data.restaurant.name}</h1>
+    //    <p>{data.restaurant.description}</p>
+    //    <img src={data.restaurant.picture} alt="photo de tartine" />
+    //  </div>
+    <main>
+      {data.categories.map((typeOfMeal) => {
+        if (typeOfMeal.meals.length !== 0) {
+          return (
+            <div>
+              <h2 key={typeOfMeal.meals.id}>{typeOfMeal.name}</h2>
+              <section>
+                {typeOfMeal.meals.map((meals) => {
+                  // console.log(meals.title);
+
                   return (
                     <div className="categories">
                       <div className="meal">
                         <h3>{meals.title}</h3>
                         <p>{meals.description}</p>
-                        <p>{meals.price}</p>
+                        <p>{meals.price} €</p>
+                        {meals.popular && <p>Populaire</p>}
                       </div>
                       <div className="img-meals">
-                        <img src={meals.picture} />
+                        <img src={meals.picture} alt={meals.title} />
                       </div>
                     </div>
                   );
-                }
-              })}
-            </section>
-          </main>
-        </>
-      );
-    })
+                })}
+              </section>
+            </div>
+          );
+        } else {
+          return null;
+        }
+      })}
+    </main>
   );
 }
 
