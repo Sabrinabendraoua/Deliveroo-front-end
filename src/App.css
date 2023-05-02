@@ -2,6 +2,10 @@ img {
   object-fit: cover;
   height: 100px;
 }
+header {
+  height: 80px;
+  background-color: aqua;
+}
 h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -18,7 +22,7 @@ main {
   background-color: #f3f5f5;
   padding: 30px 0;
 }
-section {
+main > section {
   display: flex;
   flex-wrap: wrap;
 }

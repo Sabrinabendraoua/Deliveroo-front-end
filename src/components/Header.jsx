@@ -1,5 +1,5 @@
 const Header = () => {
-  return "coucou";
+  return <header>LOGO</header>;
 };
 
 export default Header;
