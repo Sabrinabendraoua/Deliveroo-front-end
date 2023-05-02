@@ -52,13 +52,13 @@ function App() {
                 return (
                   <div key={typeOfMeal.name}>
                     <h2>{typeOfMeal.name}</h2>
-                    <div>
+                    <div className="meals-container">
                       {typeOfMeal.meals.map((meals) => {
                         // console.log(meals.title);
 
                         return (
-                          <div className="categories">
-                            <div className="meal">
+                          <article>
+                            <div>
                               <h3>{meals.title}</h3>
                               <p className="meal-desrciption">
                                 {meals.description}
@@ -70,12 +70,12 @@ function App() {
                                 )}
                               </div>
                             </div>
-                            <div className="img-meals">
+                            <div>
                               {meals.picture && (
                                 <img src={meals.picture} alt={meals.title} />
                               )}
                             </div>
-                          </div>
+                          </article>
                         );
                       })}
                     </div>
